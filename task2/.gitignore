@@ -1,0 +1,4 @@
+nbody
+*.o
+inputs/
+results/*.csv
