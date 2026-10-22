@@ -144,6 +144,9 @@ int main(int argc, char* argv[]) {
 /*-----------------------------------------------------------------*/
 void Usage(char* prog_name) {
    fprintf(stderr, "usage: %s <thread_count> [inserts total_ops search_pct insert_pct]\n", prog_name);
+   fprintf(stderr, "thread_count — число потоков; inserts — ключей до замера;\n");
+   fprintf(stderr, "total_ops — число операций; search_pct, insert_pct — доли поиска и вставки\n");
+   fprintf(stderr, "пример: %s 4 1000 24000 0.90 0.01\n", prog_name);
    exit(1);
 }  /* Usage */
 

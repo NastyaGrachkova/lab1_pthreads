@@ -1,4 +1,5 @@
 nbody
+gen_input
 *.o
 inputs/
 results/*.csv

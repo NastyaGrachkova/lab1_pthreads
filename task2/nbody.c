@@ -184,7 +184,11 @@ static void write_state(world_t *w, double t) {
 
 int main(int argc, char **argv) {
     if (argc < 3) {
-        fprintf(stderr, "Usage: %s t_end input.txt [nthreads] [dt] [output.csv]\n", argv[0]);
+        fprintf(stderr,
+                "Usage: %s t_end input.txt [nthreads] [dt] [output.csv]\n"
+                "nthreads — потоки, dt — шаг (с), output.csv — файл траектории\n"
+                "пример: %s 1.0 demo.txt 4 0.01 out.csv\n",
+                argv[0], argv[0]);
         return 1;
     }
 
