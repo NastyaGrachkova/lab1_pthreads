@@ -13,7 +13,9 @@ gen_input: gen_input.c my_rand.c my_rand.h
 clean:
 	rm -f nbody gen_input
 
-run: nbody
+run: nbody gen_input
+	mkdir -p inputs results
+	test -f inputs/test_100.txt || ./gen_input 100 inputs/test_100.txt
 	./nbody 10.0 inputs/test_100.txt 4 0.01 results/out.csv
 
 .PHONY: all clean run

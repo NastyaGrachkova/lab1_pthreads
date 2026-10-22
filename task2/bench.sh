@@ -1,6 +1,17 @@
 #!/bin/bash
+cd "$(dirname "$0")"
+make -s
 
 INPUT=${1:-inputs/test_1000.txt}
+if [ ! -f "$INPUT" ]; then
+    mkdir -p "$(dirname "$INPUT")"
+    n=$(basename "$INPUT" | sed -n 's/^test_\([0-9][0-9]*\)\.txt$/\1/p')
+    if [ -z "$n" ]; then
+        echo "Нет файла $INPUT. Создайте его: ./gen_input N $INPUT" >&2
+        exit 1
+    fi
+    ./gen_input "$n" "$INPUT"
+fi
 T_END=${2:-1.0}
 DT=${3:-0.01}
 REPEATS=${4:-5}

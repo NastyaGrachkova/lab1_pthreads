@@ -195,8 +195,8 @@ int main(int argc, char **argv) {
     double t_end = atof(argv[1]);
     const char *infile = argv[2];
     int nthreads = (argc >= 4) ? atoi(argv[3]) : 4;
-    double dt = (argc >= 5) ? atof(argv[4]) : 1.0;
-    const char *outfile = (argc >= 6) ? argv[5] : "results/trajectory.csv";
+    double dt = (argc >= 5) ? atof(argv[4]) : 0.01;
+    const char *outfile = (argc >= 6) ? argv[5] : "trajectory.csv";
 
     if (nthreads <= 0) { fprintf(stderr, "nthreads must be > 0\n"); return 1; }
     if (dt <= 0.0)     { fprintf(stderr, "dt must be > 0\n");       return 1; }
