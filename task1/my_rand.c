@@ -33,7 +33,6 @@ int main(void) {
 unsigned my_rand(unsigned* seed_p) {
    long long z = *seed_p;
    z *= MR_MULTIPLIER; 
-// z += MR_INCREMENT;
    z %= MR_MODULUS;
    *seed_p = z;
    return *seed_p;
